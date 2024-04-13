@@ -7,15 +7,15 @@ To get started with docker-compose:
 # Test locally with Minikube
 
 `
--- Start minikube 
+// Start minikube 
 minikube start
 
--- Check minikube dashboard
+// Check minikube dashboard
 minikube dashboard
 
--- Create an image from Dockerfile
+// Create an image from Dockerfile
 docker build -t pro690-image . --no-cache
 
--- Create kubectl deployment
+// Create kubectl deployment
 kubectl create deployment pro690-app --image=pro690-image:latest
 `
