@@ -28,5 +28,32 @@ kubectl delete deployment --all
 
 
 # Argo CD
+
+### Step 1
+UI way - 
 https://argo-cd.readthedocs.io/en/stable/getting_started/#creating-apps-via-ui
 
+CLI way -
+```
+kubectl config set-context --current --namespace=argocd
+
+argocd app create pro690-app  \
+--repo https://github.com/zrakhimov/pro690-final.git \
+--path k8s \
+--dest-server https://kubernetes.default.svc \
+--dest-namespace default
+
+kubectl config set-context --current --namespace=default
+
+
+```
+
+
+### Step 2
+```
+// When you finished, you can cleanup by deleting the service and deployments
+kubectl delete service --all
+kubectl delete deployment --all
+kubectl delete rollout --all
+kubectl delete application --all 
+```
