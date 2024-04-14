@@ -78,3 +78,32 @@ Once the weight reaches 20% it pauses and needs to be continued manually. It's s
 kubectl argo rollouts promote my-rollout
 
 ```
+
+
+# Azure Kubernetes Cluster (AKS)
+
+### Create Cluster
+
+I called it `my-cluster` in azure.
+
+### Login
+
+```
+az login
+```
+
+### Connect AKS in local env
+
+You'd need to have Azure CLI and kubectl installed.
+```
+az aks get-credentials --name my-cluster --resource-group pro690-resource-group
+/// Merged "my-cluster" as current context in /Users/zokir/.kube/config
+```
+
+Basically at this point i have 2 contexts. First one is in my local machine called "**minikube**"
+Second is called "**my-cluster**" which is AKS
+To get the list of contexts run:
+```
+ kubectl config get-contexts
+```
+
