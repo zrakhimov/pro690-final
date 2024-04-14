@@ -61,6 +61,12 @@ kubectl delete application --all
 
 # Argo Rollouts
 
+### See rollout status
 ```
 kubectl argo rollouts get rollout my-rollout --watch
+```
+### Updating image
+```
+kubectl argo rollouts set image my-rollout \
+  my-rollout=zrakhimov/pro690-image:v2
 ```
