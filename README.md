@@ -4,18 +4,19 @@ To get started with docker-compose:
 
 `docker compose up -d`
 
-# Test locally with Minikube
+# Minikube
+
+To get started with Kubernetes cluster using Minikube
+
 ```
 // Start minikube 
 minikube start
 
-// Check minikube dashboard
-minikube dashboard
+// Apply services and deployments
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
 
-// Create an image from Dockerfile
-docker build -t pro690-image . --no-cache
 
-// Create kubectl deployment
-kubectl create deployment pro690-app --image=pro690-image:latest
+
 ```
 
