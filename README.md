@@ -70,3 +70,11 @@ kubectl argo rollouts get rollout my-rollout --watch
 kubectl argo rollouts set image my-rollout \
   my-rollout=zrakhimov/pro690-image:v2
 ```
+Once the weight reaches 20% it pauses and needs to be continued manually. It's set in the rollout.yaml file
+
+### Promote rollout
+
+```
+kubectl argo rollouts promote my-rollout
+
+```
