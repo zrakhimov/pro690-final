@@ -154,6 +154,15 @@ argocd app create pro690-app  \
 
 application 'pro690-app' created
 
-###
+### Step 3
+
+See it in the UI (localhost:8080 )
+```
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+![Screenshot at Apr 14 15-37-06](https://github.com/zrakhimov/pro690-final/assets/22464933/8a672464-36a8-4aa5-b26b-4ef55437e538)
+
+
+
 
 
