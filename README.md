@@ -26,3 +26,7 @@ kubectl delete deployment --all
 
 ```
 
+
+# Argo CD
+https://argo-cd.readthedocs.io/en/stable/getting_started/#creating-apps-via-ui
+
