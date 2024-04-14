@@ -129,7 +129,7 @@ docker login -u zrakhimkov
 ````
 
 
-### Create application
+## Create application
 
 **Pre-req:**
 Make sure to create argo cd (step 1) and argo rollout (step 1) namespaces and installations
