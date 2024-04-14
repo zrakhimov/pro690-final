@@ -14,8 +14,8 @@ spec:
         app: my-app
     spec:
       containers:
-        - name: pro690-app-v2
-          image: zrakhimov/pro690-image:v2
+        - name: pro690-app
+          image: zrakhimov/pro690-image:v1
           imagePullPolicy: Always
           ports:
             - name: http
