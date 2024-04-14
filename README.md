@@ -29,6 +29,7 @@ kubectl delete deployment --all
 
 # Argo CD
 
+
 ### Step 1
 UI way - 
 https://argo-cd.readthedocs.io/en/stable/getting_started/#creating-apps-via-ui
@@ -56,4 +57,24 @@ kubectl delete service --all
 kubectl delete deployment --all
 kubectl delete rollout --all
 kubectl delete application --all 
+```
+
+# Argo Rollouts
+
+### See rollout status
+```
+kubectl argo rollouts get rollout my-rollout --watch
+```
+### Updating image
+```
+kubectl argo rollouts set image my-rollout \
+  my-rollout=zrakhimov/pro690-image:v2
+```
+Once the weight reaches 20% it pauses and needs to be continued manually. It's set in the rollout.yaml file
+
+### Promote rollout
+
+```
+kubectl argo rollouts promote my-rollout
+
 ```
