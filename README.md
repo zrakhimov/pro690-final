@@ -106,4 +106,42 @@ To get the list of contexts run:
 ```
  kubectl config get-contexts
 ```
+To switch contexts:
+
+```
+kubectl config use-context my-cluster
+
+```
+
+
+### Login to Docker hub
+
+Needed to pull the image when yaml is applied.
+```
+docker login -u zrakhimkov
+````
+
+
+### Create application
+
+You need to login to argo cd
+
+```
+argocd login localhost:8080
+```
+Then
+
+```
+argocd app create pro690-app  \               20 ✘  03:25:11 pm 
+--repo https://github.com/zrakhimov/pro690-final.git \
+--path k8s \
+--dest-server https://kubernetes.default.svc \
+--dest-namespace default
+
+```
+
+application 'pro690-app' created
+
+###
+
 
