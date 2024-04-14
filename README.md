@@ -61,6 +61,13 @@ kubectl delete application --all
 
 # Argo Rollouts
 
+### Step 1 
+```
+kubectl create namespace argo-rollouts
+kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/releases/latest/download/install.yaml
+```
+
+
 ### See rollout status
 ```
 kubectl argo rollouts get rollout my-rollout --watch
@@ -124,15 +131,20 @@ docker login -u zrakhimkov
 
 ### Create application
 
+**Pre-req:**
+Make sure to create argo cd (step 1) and argo rollout (step 1) namespaces and installations
+
+### Step 1
 You need to login to argo cd
 
 ```
 argocd login localhost:8080
 ```
-Then
 
+### Step 2
+Create the app
 ```
-argocd app create pro690-app  \               20 ✘  03:25:11 pm 
+argocd app create pro690-app  \              
 --repo https://github.com/zrakhimov/pro690-final.git \
 --path k8s \
 --dest-server https://kubernetes.default.svc \
