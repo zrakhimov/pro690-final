@@ -164,5 +164,26 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 
 
+## View Application
 
+You can try to open up a port 3000 on your local machine with one of the pod's name
+
+```
+kubectl port-forward my-rollout-fcd5db656-hrc6g 3000:8080
+
+```
+
+Head to localhost:3000, you should be able to see it
+
+
+## Apply new image to see argo rollouts in action
+
+* Change the image to v2 in rollout.yaml
+* Push it to git
+* Sync argo cd
+* It'll pause at 20%
+* THen promote the rest
+  ```
+  kubectl argo rollouts promote my-rollout
+```
 
